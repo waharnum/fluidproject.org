@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+
+<script src="http://www.fluidproject.org/lib/infusion/infusion-custom.js"></script>
+<script src="http://www.fluidproject.org/js/uio.js"></script>
+
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/Enactors.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/PrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/foundation/css/foundation.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/style.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/contrast.css" rel="stylesheet">
+
+<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
+
+
+        <title>Keyboard Accessibility for jQuery and Infusion | fluid</title>
+
+    </head>
+    <body>
+        <!-- BEGIN markup for Preference Editor -->
+<div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+    <!-- This is the div that will contain the Preference Editor component -->
+    <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+    <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+    <div class="fl-panelBar">
+        <span class="fl-prefsEditor-buttons">
+            <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+            <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+        </span>
+    </div>
+</div>
+
+
+        <div class="fluid-web fluid-web-news">
+            <div class="row">
+    <header class="small-12 medium-3 columns">
+        <div class="fluid-web-skip-links">
+            <a href="#fluid-web-content">Skip to Content</a>
+            <a href="#fluid-web-navigation">Skip to Navigation</a>
+        </div>
+        <h1><a href="/"><span class="fluid-web-logo-star" role="presentation"></span>fluid</a></h1>
+    </header>
+
+    <nav  id="fluid-web-navigation" class="small-12 medium-8 columns fluid-web-nav">
+        <ul class="right button-group">
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/index.html" class="button inactive">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/about.html" class="button inactive">
+                        About
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/projects.html" class="button inactive">
+                        Projects
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/infusion.html" class="button inactive">
+                        Infusion
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/news.html" class="button inactive">
+                        News
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="flc-toc-tocContainer toc small-12 columns"> </div>
+</div>
+
+            <section class="row">
+                <div class="medium-6 columns">
+                    <h2 class="fluid-web-emphasized-text">Keyboard Accessibility for jQuery and Infusion</h2>
+                    <p class="fluid-web-news-post-meta">
+                        Posted by Colin Clark on 2009-07-08
+                    </p>
+                </div>
+                <div class="medium-6 columns">
+                    <p>Lots has changed since <a href="http://fluidproject.org/blog/2008/01/11/jquery-tabindex-plugin/">I last posted about Fluid&#39;s keyboard accessibility plugins</a> for jQuery. Here&#39;s a quick summary of what&#39;s new:</p>
+<p>We&#39;ve donated our tabindex normalization functions to jQuery, and they&#39;re available directly in <a href="http://jquery.com">jQuery</a> 1.3. Here&#39;s an example of how to use them:</p>
+<pre><code> $().attr(&quot;tabindex&quot;); // Gets the tabindex of the first matched element.
+ $().attr(&quot;tabindex&quot;, -1); // Sets the tabindex value of all elements in this jQuery instance.
+</code></pre><p>This now works consistently across all browsers in the jQuery way! There are some other tabindex-related conveniences in <a href="http://ui.jquery.com"> jQuery UI </a>1.7 core, too:</p>
+<pre><code>$().focusable(); // Returns true if the first matched element is currently focusable.
+ $().tabbable(); // Returns true if the first matched element can be focused using the Tab/Shift-Tab keys.
+</code></pre><p>Thanks so much to Scott Gonzalez for helping us land these patches in jQuery!</p>
+<p>In my previous blog post about keyboard accessibility, I hinted at a comprehensive keyboard accessibility library that makes it easy to support desktop-style navigation with the keyboard. This plugin now ships as part of our <a href="http://fluidproject.org/products/infusion/">Fluid Infusion</a> application framework. It also works as a standalone jQuery plugin if you don&#39;t need the rest of Infusion&#39;s great features.</p>
+<p>If you&#39;re interested in this plugin, here are a few links to get you started:</p>
+<ul>
+    <li><a href="http://wiki.fluidproject.org/display/fluid/Keyboard+Accessibility+Plugin+API">Keyboard Accessibility API Documentation</a></li>
+    <li><a href="http://wiki.fluidproject.org/display/fluid/Tutorial+-+Keyboard+Accessibility+Plugin">Keyboard Accessibility Tutorial</a></li>
+    <li><a href="http://fluidproject.org/releases/1.3.1/demos/keyboard-a11y/demo.html">Demo of the keyboard plugin in action</a></li>
+    <li><a href="https://github.com/fluid-project/infusion/blob/master/src/webapp/framework/core/js/jquery.keyboard-a11y.js">Source code for the jquery.keyboard-a11y.js plugin</a></li>
+</ul>
+
+<p>As always, comments, feedback, and suggestions are welcome.</p>
+
+                </div>
+            </section>
+            <footer class="row fluid-web-section-gap fluid-web-footer">
+    <div class="medium-6 columns">
+        <p>Fluid is a project of the <a href="http://idrc.ocadu.ca/">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca">OCAD
+University</a>, funded by a grant from <a href="http://www.mellon.org/">The Andrew W. Mellon Foundation</a>.</p>
+
+        <address>
+            The Inclusive Design Research Centre<br/>
+            <a href="https://www.google.com/maps/place/205+Richmond+St+W/@43.6493603,-79.3901121,17z/">205 Richmond St. W. 2nd Floor<span class="fluid-web-map-icon" role="presentation"></span></a><br/>
+            Toronto, ON Canada M5V 1V3 <br/>
+            <abbr title="Phone number">T.</abbr> 416-977-6000 #3968 <br/>
+            <abbr title="Fax">F.</abbr> 416-977-9844
+        </address>
+    </div>
+
+    <div class="medium-6 columns">
+        <dl class="fluid-web-projectCoordinator-list">
+            <dt><a href="mailto:jtreviranus@faculty.ocadu.ca">Jutta Treviranus<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Principal Investigator, Director and Professor</dd>
+            <dt><a href="mailto:jmitchell@ocadu.ca">Jess Mitchell<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Senior Manager, Research and Development</dd>
+            <dt><a href="mailto:cclark@ocadu.ca">Colin Clark<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Lead Software Architect</dd>
+        </dl>
+    </div>
+</footer>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+
+<script src="http://www.fluidproject.org/lib/infusion/infusion-custom.js"></script>
+<script src="http://www.fluidproject.org/js/uio.js"></script>
+
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/Enactors.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/PrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/foundation/css/foundation.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/style.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/contrast.css" rel="stylesheet">
+
+<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
+
+
+        <title>Fluid-uPortal Collaboration 2.0 | fluid</title>
+
+    </head>
+    <body>
+        <!-- BEGIN markup for Preference Editor -->
+<div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+    <!-- This is the div that will contain the Preference Editor component -->
+    <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+    <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+    <div class="fl-panelBar">
+        <span class="fl-prefsEditor-buttons">
+            <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+            <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+        </span>
+    </div>
+</div>
+
+
+        <div class="fluid-web fluid-web-news">
+            <div class="row">
+    <header class="small-12 medium-3 columns">
+        <div class="fluid-web-skip-links">
+            <a href="#fluid-web-content">Skip to Content</a>
+            <a href="#fluid-web-navigation">Skip to Navigation</a>
+        </div>
+        <h1><a href="/"><span class="fluid-web-logo-star" role="presentation"></span>fluid</a></h1>
+    </header>
+
+    <nav  id="fluid-web-navigation" class="small-12 medium-8 columns fluid-web-nav">
+        <ul class="right button-group">
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/index.html" class="button inactive">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/about.html" class="button inactive">
+                        About
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/projects.html" class="button inactive">
+                        Projects
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/infusion.html" class="button inactive">
+                        Infusion
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/news.html" class="button inactive">
+                        News
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="flc-toc-tocContainer toc small-12 columns"> </div>
+</div>
+
+            <section class="row">
+                <div class="medium-6 columns">
+                    <h2 class="fluid-web-emphasized-text">Fluid-uPortal Collaboration 2.0</h2>
+                    <p class="fluid-web-news-post-meta">
+                        Posted by Colin Clark on 2009-03-01
+                    </p>
+                </div>
+                <div class="medium-6 columns">
+                    <p>The Fluid and uPortal communities have both benefited from nearly two years of successful collaboration on user experience issues. Fluid technologies, such as the Skinning System and the Reorderer, have been integrated into uPortal 3.1, and we&#39;ve got lots more code and resources to share over the next few months.</p>
+<p>Given the success of our collaboration so far, we&#39;d like to make sure our communities continue to work together into the future. We&#39;d love to continue working with the uPortal community on deliverables that directly add value to upcoming uPortal releases, and to help build reusable components that have been uniquely designed with uPortal&#39;s needs in mind.</p>
+
+<p>We&#39;re open to ideas and suggestions for specific projects. After talking with a few community members so far, a couple of areas come to mind: improving the out-of-box experience of uPortal&#39;s administration tools; and adding robust accessibility support to uPortal. Indeed, our communities have already started work on these areas.</p>
+
+<p>A uPortal/Fluid collaboration could help make a significant impact on uPortal&#39;s out-of-box experience, particularly for evaluators and new adopters when they first install and configure the application. At the moment, uPortal&#39;s administration tools are fairly complex and intimidating for new users, and they may serve as a barrier to adoption and wider usage. If an administrator can&#39;t successfully and easily get their uPortal instance up and running, they may be reticent to pass on this experience to their wider user base. Reworking the design and implementation of the administration user experience from the ground up could be very fruitful, making it easier for users to configure portlets, groups, and permissions. Encapsulating reusable functionality in Fluid components would allow other portlet developers to embed shared functionality, such as assigning users to groups, within their own context. Fluid can help throughout the process, from interaction designs and wireframes through implementation and testing.</p>
+
+<p>Ultimately, there&#39;s a secondary benefit to refreshing and redesigning the administration tools, especially if we build sharable components during the process. At the moment, there are scarce examples of best practices for portlet authors in terms of design decisions, technology choices, and implementation techniques. New administration tools would provide us with a showcase to share with other portlet developers, providing them with hands-on examples for how to write a great portlet for uPortal.</p>
+
+<p>Another area ripe for Fluid/uPortal collaboration is accessibility. Fluid and uPortal share a common philosophy in terms of personalization, allowing users to customize the information and experience provided by the application. Collaboration on accessibility support for uPortal would allow us to have a more robust system for ensuring compliance with the ADA and other international accessibility standards. Going beyond just compliance, we can apply the personalization philosophy of uPortal to accessibility, giving users the ability to reskin, restyle, and adapt the portal layout and appearance based on their personal needs and preferences. This would involve a number of specific deliverables:</p>
+
+<ol>
+<li>Improving the markup, stylesheets, and JavaScript used by the portal to make it conform to modern WCAG 2.0 guidelines</li>
+<li>Integrating Fluid&#39;s TransformAble services into the portal, providing a system for adapting the look and feel of uPortal based on user preferences</li>
+<li>Providing examples and tutorials for portal developers on how to support accessibility in their own portals</li>
+</ol>
+
+<p>Colin Clark, University of Toronto
+Technical Lead, Fluid Project</p>
+
+                </div>
+            </section>
+            <footer class="row fluid-web-section-gap fluid-web-footer">
+    <div class="medium-6 columns">
+        <p>Fluid is a project of the <a href="http://idrc.ocadu.ca/">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca">OCAD
+University</a>, funded by a grant from <a href="http://www.mellon.org/">The Andrew W. Mellon Foundation</a>.</p>
+
+        <address>
+            The Inclusive Design Research Centre<br/>
+            <a href="https://www.google.com/maps/place/205+Richmond+St+W/@43.6493603,-79.3901121,17z/">205 Richmond St. W. 2nd Floor<span class="fluid-web-map-icon" role="presentation"></span></a><br/>
+            Toronto, ON Canada M5V 1V3 <br/>
+            <abbr title="Phone number">T.</abbr> 416-977-6000 #3968 <br/>
+            <abbr title="Fax">F.</abbr> 416-977-9844
+        </address>
+    </div>
+
+    <div class="medium-6 columns">
+        <dl class="fluid-web-projectCoordinator-list">
+            <dt><a href="mailto:jtreviranus@faculty.ocadu.ca">Jutta Treviranus<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Principal Investigator, Director and Professor</dd>
+            <dt><a href="mailto:jmitchell@ocadu.ca">Jess Mitchell<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Senior Manager, Research and Development</dd>
+            <dt><a href="mailto:cclark@ocadu.ca">Colin Clark<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Lead Software Architect</dd>
+        </dl>
+    </div>
+</footer>
+
+        </div>
+    </body>
+</html>

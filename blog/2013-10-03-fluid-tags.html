@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+
+<script src="http://www.fluidproject.org/lib/infusion/infusion-custom.js"></script>
+<script src="http://www.fluidproject.org/js/uio.js"></script>
+
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/Enactors.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/PrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/foundation/css/foundation.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/style.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/contrast.css" rel="stylesheet">
+
+<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
+
+
+        <title>fluid tags | fluid</title>
+
+    </head>
+    <body>
+        <!-- BEGIN markup for Preference Editor -->
+<div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+    <!-- This is the div that will contain the Preference Editor component -->
+    <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+    <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+    <div class="fl-panelBar">
+        <span class="fl-prefsEditor-buttons">
+            <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+            <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+        </span>
+    </div>
+</div>
+
+
+        <div class="fluid-web fluid-web-news">
+            <div class="row">
+    <header class="small-12 medium-3 columns">
+        <div class="fluid-web-skip-links">
+            <a href="#fluid-web-content">Skip to Content</a>
+            <a href="#fluid-web-navigation">Skip to Navigation</a>
+        </div>
+        <h1><a href="/"><span class="fluid-web-logo-star" role="presentation"></span>fluid</a></h1>
+    </header>
+
+    <nav  id="fluid-web-navigation" class="small-12 medium-8 columns fluid-web-nav">
+        <ul class="right button-group">
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/index.html" class="button inactive">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/about.html" class="button inactive">
+                        About
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/projects.html" class="button inactive">
+                        Projects
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/infusion.html" class="button inactive">
+                        Infusion
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/news.html" class="button inactive">
+                        News
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="flc-toc-tocContainer toc small-12 columns"> </div>
+</div>
+
+            <section class="row">
+                <div class="medium-6 columns">
+                    <h2 class="fluid-web-emphasized-text">fluid tags</h2>
+                    <p class="fluid-web-news-post-meta">
+                        Posted by sgithens on 2013-10-02
+                    </p>
+                </div>
+                <div class="medium-6 columns">
+                    <p>This is my first post here.  I&#39;m a GPII and Fluid developer, and I&#39;m hoping to write here about new and interesting features for our platform, often with an emphasis on tooling for our developers and partners to integrate their solutions and hack on the core platform.</p>
+<p>A few weeks ago while visiting Antranig in Boulder, I started writing a ctags parser for Fluid. It&#39;s still a hack, but you can find it here: <a href="https://github.com/sgithens/fluid-tags">https://github.com/sgithens/fluid-tags</a></p>
+<p>After years of using vim, and a few years of using emacs, I&#39;ve actually switched back to just gedit lately. Part of that process has been doing some minor investment in finding existing plug-ins and tweaking them. Part of this process has also led me to finally confront the lack of a good tree display of javascript and json source.</p>
+<p>There are some IDEs out there that do a good job of parsing javascript, but in general it seems mostly haphazard, especially with the multitude of ways that folks declare functions and wrap them up. For instance, just using the usual <code>(function () { ... })();</code> idiom will baffle most tree views. Given that gedit has a nice ctags viewer in the form of the source code browser, it seemed like a good place to start.</p>
+<p>Ctags and it&#39;s cousin exuberant ctags typically choke on modern javascript, giving you maybe one or two function definitions from your file. There are some other, better, javascript ctags tools, but this seemed like a good, albeit small place to dive in to the future of development tools specifically targeted at our framework.</p>
+<p>For instance, the types of ideas and components we create aren&#39;t top level language features in javascript.  Similar to jQuery and other types of libraries, they form higher level thought patterns on top of javascript&#39;s building blocks.  Take for instance, Fluid&#39;s defaults blocks.</p>
+<pre><code>fluid.defaults(&quot;gpii.server.config&quot;, {
+  gradeNames: [&quot;fluid.eventedComponent&quot;, &quot;autoInit&quot;],
+  finalInitFunction: &quot;gpii.server.config.finalInit&quot;,
+  events: {
+    configure: null
+  },
+  listeners: {
+    configure: &quot;{that}.configureHandler&quot;
+  },
+  preInitFunction: &quot;gpii.server.config.preInit&quot;,
+  invokers: {
+    configure: &quot;gpii.server.config.configure&quot;
+  }
+});
+</code></pre><p>Even a good parser would recognize this as just a function, and maybe give some good advice on the arguments being passed in.  But in Fluid, this becomes a really important <em>thing</em>. A <em>thing</em> which deserves some attention. This component is something we&#39;ll want to be able to find and navigate to.  In the future we want things to happens automatically in the gradeNames. In the listeners. In lots of things.</p>
+<p>So we want a better javascript tag maker, but we also want a semantically smart Fluid tag maker.</p>
+<p>It turns out it&#39;s pretty easy to do this with the AST trees that come out of <a title="Esprima.js" href="http://esprima.org/" target="_blank">Esprima.js</a>.  And with our first stab at a better ctags generator, you can see the results below in some screen shots of gedit.</p>
+<p><a href="/images/news/fluid.js.tags_.png"><img src="/images/news/fluid.js.tags_-258x300.png" alt="fluid.js.tags"></a></p>
+<p>Above you can see all the Fluid Defaults blocks and a number of the functions in Fluid.js. Defaults blocks are top level items here that can be navigated to.</p>
+<p><a href="/images/news/server.js.tags_.png"><img src="/images/news/server.js.tags_-300x254.png" alt="server.js.tags"></a></p>
+<p>Above is a good example of the server from the GPII project.  In addition to defaults blocks, we&#39;re also pulling out demands blocks.</p>
+<p>Just this very primitive building block is already making my daily development on GPII more productive.  Of course, this needs to go hand in hand with information generated from partially and fully executing the code.  But, since we are fairly good at following conventions in the project, even this sort of static parsing can be very useful.</p>
+<p>More tooling soon!</p>
+
+                </div>
+            </section>
+            <footer class="row fluid-web-section-gap fluid-web-footer">
+    <div class="medium-6 columns">
+        <p>Fluid is a project of the <a href="http://idrc.ocadu.ca/">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca">OCAD
+University</a>, funded by a grant from <a href="http://www.mellon.org/">The Andrew W. Mellon Foundation</a>.</p>
+
+        <address>
+            The Inclusive Design Research Centre<br/>
+            <a href="https://www.google.com/maps/place/205+Richmond+St+W/@43.6493603,-79.3901121,17z/">205 Richmond St. W. 2nd Floor<span class="fluid-web-map-icon" role="presentation"></span></a><br/>
+            Toronto, ON Canada M5V 1V3 <br/>
+            <abbr title="Phone number">T.</abbr> 416-977-6000 #3968 <br/>
+            <abbr title="Fax">F.</abbr> 416-977-9844
+        </address>
+    </div>
+
+    <div class="medium-6 columns">
+        <dl class="fluid-web-projectCoordinator-list">
+            <dt><a href="mailto:jtreviranus@faculty.ocadu.ca">Jutta Treviranus<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Principal Investigator, Director and Professor</dd>
+            <dt><a href="mailto:jmitchell@ocadu.ca">Jess Mitchell<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Senior Manager, Research and Development</dd>
+            <dt><a href="mailto:cclark@ocadu.ca">Colin Clark<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Lead Software Architect</dd>
+        </dl>
+    </div>
+</footer>
+
+        </div>
+    </body>
+</html>

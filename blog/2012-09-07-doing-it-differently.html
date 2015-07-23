@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+
+<script src="http://www.fluidproject.org/lib/infusion/infusion-custom.js"></script>
+<script src="http://www.fluidproject.org/js/uio.js"></script>
+
+        <!--FLUID-5588: Remove use of site.url absolute value and replace with relative URLs -->
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/Enactors.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/PrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/lib/foundation/css/foundation.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/style.css" rel="stylesheet">
+<link href="http://www.fluidproject.org/css/contrast.css" rel="stylesheet">
+
+<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet">
+
+
+        <title>Doing it Differently | fluid</title>
+
+    </head>
+    <body>
+        <!-- BEGIN markup for Preference Editor -->
+<div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+    <!-- This is the div that will contain the Preference Editor component -->
+    <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+    <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
+    <div class="fl-panelBar">
+        <span class="fl-prefsEditor-buttons">
+            <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+            <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+        </span>
+    </div>
+</div>
+
+
+        <div class="fluid-web fluid-web-news">
+            <div class="row">
+    <header class="small-12 medium-3 columns">
+        <div class="fluid-web-skip-links">
+            <a href="#fluid-web-content">Skip to Content</a>
+            <a href="#fluid-web-navigation">Skip to Navigation</a>
+        </div>
+        <h1><a href="/"><span class="fluid-web-logo-star" role="presentation"></span>fluid</a></h1>
+    </header>
+
+    <nav  id="fluid-web-navigation" class="small-12 medium-8 columns fluid-web-nav">
+        <ul class="right button-group">
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/index.html" class="button inactive">
+                        Home
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/about.html" class="button inactive">
+                        About
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/projects.html" class="button inactive">
+                        Projects
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/infusion.html" class="button inactive">
+                        Infusion
+                    </a>
+                </li>
+            
+                <li class="">
+                    <a href="http://www.fluidproject.org/news.html" class="button inactive">
+                        News
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="flc-toc-tocContainer toc small-12 columns"> </div>
+</div>
+
+            <section class="row">
+                <div class="medium-6 columns">
+                    <h2 class="fluid-web-emphasized-text">Doing it Differently</h2>
+                    <p class="fluid-web-news-post-meta">
+                        Posted by Colin Clark on 2012-09-06
+                    </p>
+                </div>
+                <div class="medium-6 columns">
+                    <p>I was recently asked about the goals of the Fluid community and how Infusion relates to other frameworks out there. Here&#39;s my response:</p>
+<p>Fluid was formed as a open source community back in 2007 to make a long-term impact on the usability and accessibility of the web. From the start, our goal has been to:</p>
+<ol>
+    <li>Share new design methods that empower users to be co-creators, not just passive consumers of user interfaces</li>
+    <li>Devise new development tools for building software that can adapt to individuals</li>
+    <li>Foster an open source community that welcomes and includes &quot;the rest of us;&quot; the designers, testers, and non-geeks who otherwise wouldn&#39;t get involved in open source</li>
+</ol>
+
+<p>From our experience building real applications over the years, it became clear that today&#39;s software development idioms don&#39;t support this vision of user interfaces that can be easily adapted, transformed, and reconfigured. The software industry&#39;s design patterns and &quot;received wisdom&quot; more often than not result in expensive, brittle, and hard-to-maintain user interfaces that don&#39;t match the needs, preferences, and creativity of users.</p>
+<p>That&#39;s where Infusion fits in. We need new tools, new patterns, and new techniques for writing software. They need to be context-aware, configurable, and very loosely coupled. Infusion is the Fluid community&#39;s long-term effort to produce these next-generation tools. But here&#39;s the thing: we also know that these are big, ambitious, and challenging goals. Goals that take time, thought, and effort to achieve. Unlike most other frameworks out there, we&#39;re trying to:</p>
+<ul>
+    <li>Address the stuff that doesn&#39;t get done, gets left to the end, or is relegated to inexperienced developers</li>
+    <li>Change the economics of software development, where costs grow exponentially as a system gets larger and features increase</li>
+    <li>Make software automatically and seamlessly adapt to the unique needs and preferences of each individual user without requiring developers to re-program the system each time.</li>
+</ul>
+
+<p>You can&#39;t solve problems like that by appealing to what people already know. And the status quo doesn&#39;t cut it; the vast majority of software is inaccessible or chronically difficult to use today. So, unlike the other guys, we have to do things differently.</p>
+<p>That means taking our time. That means prioritizing the hard, failure-prone work of devising new development idioms over marketing and flash. And it means working quietly on our vision, even if it&#39;s not going to make us famous. But it will make a better experience for users.</p>
+<p>That&#39;s the mission of Fluid Infusion, and we&#39;re making progress on it every day. It&#39;s a practical mission, not just theoretical or experimental. Infusion is used in a growing collection of large production applications such as CollectionSpace, uPortal, OER Commons, and the Global Public Inclusive Infrastructure. In the hands of real users, we get the feedback we need to recognize what works and what doesn&#39;t, ensuring that Infusion continues to get faster and better over time.</p>
+<p>We&#39;re deep in the midst of working on our next release, Infusion 1.5. It will feature huge improvements to the Inversion of Control (IoC) system, making it easier to develop context-aware user interfaces with a minimum of code. And it will also include a new Model Transformation system, helping developers to adapt to and interoperate with diverse data formats and schemas.</p>
+
+                </div>
+            </section>
+            <footer class="row fluid-web-section-gap fluid-web-footer">
+    <div class="medium-6 columns">
+        <p>Fluid is a project of the <a href="http://idrc.ocadu.ca/">Inclusive Design Research Centre</a> at <a href="http://www.ocadu.ca">OCAD
+University</a>, funded by a grant from <a href="http://www.mellon.org/">The Andrew W. Mellon Foundation</a>.</p>
+
+        <address>
+            The Inclusive Design Research Centre<br/>
+            <a href="https://www.google.com/maps/place/205+Richmond+St+W/@43.6493603,-79.3901121,17z/">205 Richmond St. W. 2nd Floor<span class="fluid-web-map-icon" role="presentation"></span></a><br/>
+            Toronto, ON Canada M5V 1V3 <br/>
+            <abbr title="Phone number">T.</abbr> 416-977-6000 #3968 <br/>
+            <abbr title="Fax">F.</abbr> 416-977-9844
+        </address>
+    </div>
+
+    <div class="medium-6 columns">
+        <dl class="fluid-web-projectCoordinator-list">
+            <dt><a href="mailto:jtreviranus@faculty.ocadu.ca">Jutta Treviranus<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Principal Investigator, Director and Professor</dd>
+            <dt><a href="mailto:jmitchell@ocadu.ca">Jess Mitchell<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Senior Manager, Research and Development</dd>
+            <dt><a href="mailto:cclark@ocadu.ca">Colin Clark<span class="fluid-web-mail-icon" role="presentation"></span></a></dt>
+            <dd>Lead Software Architect</dd>
+        </dl>
+    </div>
+</footer>
+
+        </div>
+    </body>
+</html>
